@@ -6,10 +6,20 @@ $(document).ready(function() {
 	$('.js-like').on('click', function(event) {
 		event.preventDefault();
 
+	//-----------------------------------------------
+	//  LIKE
+	//-----------------------------------------------
+
 		$(this).text('Liked!')
 		.closest('.news-item')
 		.addClass('is-liked');
 	});
+
+
+	//-----------------------------------------------
+	//  ADD LINK
+	//-----------------------------------------------
+
 
 	$('.js-add-link').on('click', function(event) {
 		event.preventDefault();
@@ -17,4 +27,24 @@ $(document).ready(function() {
 		$('.js-form').toggleClass('is-visible');
 	
 	});
+
+
+	//-----------------------------------------------
+	//  MODAL
+	//-----------------------------------------------
+
+	$('.js-show-modal').on('click', function(event) {
+			event.preventDefault();
+
+			$('.js-modal').addClass('is-visible');
+			$('.js-modal-overlay').addClass('is-visible');
+		
+		});
+	$('.js-show-modal-overlay').on('click', function(event) {
+			event.preventDefault();
+
+			$('.js-modal').removeClass('is-visible');
+			$('.js-modal-overlay').removeClass('is-visible');
+
+		});
 });
